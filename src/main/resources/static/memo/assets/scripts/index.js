@@ -11,6 +11,9 @@ $memoForm.onsubmit = (e) => {
         return;
     }
     const xhr = new XMLHttpRequest();
+    const formData = new FormData();
+    formData.append('writer', $memoForm['writer'].value);
+    formData.append('content', $memoForm['content'].value);
     xhr.onreadystatechange = () => {
         if (xhr.readyState !== XMLHttpRequest.DONE) {
             return;
@@ -19,12 +22,10 @@ $memoForm.onsubmit = (e) => {
             alert(`메모를 작성하지 못했습니다. 잠시 후 다시 시도해 주세요. (${xhr.status})`)
             return;
         }
+        $memoForm['writer'].value = xhr.responseText;
+        // TODO 메모 다시 불러오기
     }
     xhr.open('POST', location.href)
-    xhr.send();
+    xhr.send(formData);
+    $memoForm['content'].value = " ";
 };
-
-
-
-
-
