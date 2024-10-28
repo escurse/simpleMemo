@@ -1,3 +1,4 @@
+mybatis mapper dtd
 https://mvnrepository.com/
 search에 JSON
 pom.xml dependencies 의 마지막 자식이 되도록 붙여넣기
