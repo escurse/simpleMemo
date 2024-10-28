@@ -14,7 +14,9 @@ $memoForm.onsubmit = (e) => {
             alert(`메모를 작성하지 못했습니다. 잠시 후 다시 시도해 주세요. (${xhr.status})`)
             return;
         }
-        xhr.responseText;
+        console.log(JSON.parse(xhr.responseText));
+        const response = JSON.parse(xhr.responseText);
+        console.log(response['result']);
         // TODO 메모 다시 불러오기
     }
     xhr.open('POST', location.href)
