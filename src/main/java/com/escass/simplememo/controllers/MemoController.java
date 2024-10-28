@@ -28,6 +28,8 @@ public class MemoController {
     @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseBody
     public String postIndex(MemoEntity memo) {
+        boolean result = this.memoService.write(memo);
+
         System.out.println(memo.getWriter());
         System.out.println(memo.getContent());
         return "ㅋㅋㅋ";
