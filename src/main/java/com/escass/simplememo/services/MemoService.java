@@ -23,7 +23,7 @@ public class MemoService {
             return false;
         }
         memo.setCreatedAt(LocalDateTime.now()); // LocalDateTime.now() : 현재 일시를 반환
-        int affectedRows = this.memoMapper.insertMemo(memo);
+        int affectedRows = memoMapper.insertMemo(memo);
         return affectedRows > 0;
     }
 }

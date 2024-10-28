@@ -30,7 +30,7 @@ public class MemoController {
     @ResponseBody
     public String postIndex(MemoEntity memo) {
         JSONObject response = new JSONObject();
-        boolean result = this.memoService.write(memo);
+        boolean result = memoService.write(memo);
         response.put("result", result);
         return response.toString();
     }
