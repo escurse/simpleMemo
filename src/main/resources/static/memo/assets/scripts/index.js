@@ -2,14 +2,6 @@ const $memoForm = document.getElementById('memoForm');
 
 $memoForm.onsubmit = (e) => {
     e.preventDefault();
-    if ($memoForm['writer'].value === '') {
-        alert('작성자를 입력해 주세요.');
-        return;
-    }
-    if ($memoForm['content'].value === '') {
-        alert('내용을 입력해 주세요.');
-        return;
-    }
     const xhr = new XMLHttpRequest();
     const formData = new FormData();
     formData.append('writer', $memoForm['writer'].value);
