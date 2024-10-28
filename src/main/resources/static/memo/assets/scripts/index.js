@@ -27,4 +27,6 @@ $memoForm.onsubmit = (e) => {
     }
     xhr.open('POST', location.href)
     xhr.send(formData);
+    $memoForm['writer'].value = "";
+    $memoForm['content'].value = "";
 };

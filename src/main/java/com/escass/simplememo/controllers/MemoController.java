@@ -2,6 +2,7 @@ package com.escass.simplememo.controllers;
 
 import com.escass.simplememo.entities.MemoEntity;
 import com.escass.simplememo.services.MemoService;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,10 +29,9 @@ public class MemoController {
     @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseBody
     public String postIndex(MemoEntity memo) {
+        JSONObject response = new JSONObject();
         boolean result = this.memoService.write(memo);
-
-        System.out.println(memo.getWriter());
-        System.out.println(memo.getContent());
-        return "ㅋㅋㅋ";
+        response.put("result", result);
+        return response.toString();
     }
 }
