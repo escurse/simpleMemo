@@ -3,5 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.escass.simplememo.mappers.MemoMapper">
-
+    <insert id="insertMemo"
+            parameterType="com.escass.simplememo.entities.MemoEntity">
+        INSERT INTO `simple_memo`.`memos` (`writer`, `content`, `created_at`)
+        VALUES (#{writer}, #{content}, #{createdAt})
+    </insert>
 </mapper>
